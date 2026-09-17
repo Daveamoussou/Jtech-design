@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>J-TECH DESIGN - Graphisme et Maintenance Informatique</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="J-TECH DESIGN">
+      <span class="logo-text">J-TECH <span>DESIGN</span></span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="accueil" class="hero">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="J-TECH DESIGN" class="hero-logo">
+    <h1>Graphisme &amp; Maintenance Informatique</h1>
+    <p>Installation, configuration et dépannage professionnel, pensé pour vous.</p>
+    <a href="#services" class="btn">Découvrir nos services</a>
+  </section>
+
+  <section id="services" class="services">
+    <h2>Nos services</h2>
+    <p class="services-sub">Touchez un service pour découvrir toutes les options disponibles</p>
+    <div class="cards">
+      <div class="card" data-service="os">
+        <div class="card-icon">💻</div>
+        <h3>Installation de systèmes</h3>
+        <p>Windows 8, 10 ou 11, dans l'édition de votre choix.</p>
+        <span class="card-tap">Voir les options →</span>
+      </div>
+      <div class="card" data-service="office">
+        <div class="card-icon">📄</div>
+        <h3>Suite Office</h3>
+        <p>Installation et activation de Microsoft Office.</p>
+        <span class="card-tap">Voir les options →</span>
+      </div>
+      <div class="card" data-service="utilitaires">
+        <div class="card-icon">🧰</div>
+        <h3>Utilitaires essentiels</h3>
+        <p>Les logiciels indispensables, installés pour vous.</p>
+        <span class="card-tap">Voir les options →</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fenêtre circulaire des options -->
+  <div id="orbit-overlay" class="orbit-overlay hidden">
+    <div class="orbit-sphere">
+      <button id="orbit-close" class="orbit-close" aria-label="Fermer">✕</button>
+      <div class="orbit-center">
+        <span id="orbit-title"></span>
+      </div>
+      <div id="orbit-items" class="orbit-items"></div>
+    </div>
+  </div>
+
+  <section id="contact" class="contact">
+    <h2>Contactez-nous</h2>
+    <p id="selection-recap" class="hidden"></p>
+    <form id="contact-form">
+      <input type="text" id="nom" placeholder="Votre nom" required>
+      <input type="email" id="email" placeholder="Votre email" required>
+      <textarea id="message" placeholder="Décrivez votre besoin" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+    <p id="confirmation" class="hidden"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 J-TECH DESIGN - Tous droits réservés</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
